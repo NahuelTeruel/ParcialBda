@@ -1,14 +1,9 @@
 package com.bda.ParcialBda.services;
 
-import com.bda.ParcialBda.entities.Album;
-import com.bda.ParcialBda.entities.Artist;
 import com.bda.ParcialBda.entities.Item;
-import com.bda.ParcialBda.entities.dto.AlbumDto;
 import com.bda.ParcialBda.entities.dto.ItemDto;
-import com.bda.ParcialBda.repositories.AlbumRepository;
 import com.bda.ParcialBda.repositories.ItemRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;

@@ -1,14 +1,9 @@
 package com.bda.ParcialBda.services;
 
-import com.bda.ParcialBda.entities.Artist;
 import com.bda.ParcialBda.entities.Invoice;
-import com.bda.ParcialBda.entities.dto.ArtistDto;
 import com.bda.ParcialBda.entities.dto.InvoiceDto;
-import com.bda.ParcialBda.repositories.ArtistRepository;
 import com.bda.ParcialBda.repositories.InvoiceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -21,31 +16,6 @@ public class InvoiceServiceImpl implements InvoiceService{
     public List<Invoice> findAll() {
         return invoiceRepository.findAll();
     }
-
-    @Override
-    public Artist modify(Integer id, ArtistDto entity) {
-        Optional<Artist> artist = Optional.of(artistRepository.findById(id).orElseThrow());
-        if (artist.isPresent()){
-            artist.get().setName(entity.getName());
-            return artistRepository.save(artist.get());}
-        else {
-            throw new NoSuchElementException("No existente en la Base de Datos");
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @Override
     public Invoice getById(Integer invoiceId) {
@@ -78,13 +48,13 @@ public class InvoiceServiceImpl implements InvoiceService{
         Optional<Invoice> invoice = Optional.of(invoiceRepository.findById(id).orElseThrow());
         if (invoice.isPresent()){
             invoice.get().setCustomerId(entity.getCustomerId());
-            invoice.setInvoiceDate(entity.getInvoiceDate());
-            invoice.setBillingAddress(entity.getBillingAddress());
-            invoice.setBillingCity(entity.getBillingCity());
-            invoice.setBillingState(entity.getBillingState());
-            invoice.setBillingCountry(entity.getBillingCountry());
-            invoice.setBillingPostalCode(entity.getBillingPostalCode());
-            invoice.setTotal(entity.getTotal());
+            invoice.get().setInvoiceDate(entity.getInvoiceDate());
+            invoice.get().setBillingAddress(entity.getBillingAddress());
+            invoice.get().setBillingCity(entity.getBillingCity());
+            invoice.get().setBillingState(entity.getBillingState());
+            invoice.get().setBillingCountry(entity.getBillingCountry());
+            invoice.get().setBillingPostalCode(entity.getBillingPostalCode());
+            invoice.get().setTotal(entity.getTotal());
             return invoiceRepository.save(invoice.get());}
         else {
             throw new NoSuchElementException("No existente en la Base de Datos");

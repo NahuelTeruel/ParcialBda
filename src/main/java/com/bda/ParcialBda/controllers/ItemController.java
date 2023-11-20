@@ -1,8 +1,6 @@
 package com.bda.ParcialBda.controllers;
 
-import com.bda.ParcialBda.entities.Album;
 import com.bda.ParcialBda.entities.Item;
-import com.bda.ParcialBda.entities.dto.AlbumDto;
 import com.bda.ParcialBda.entities.dto.ItemDto;
 import com.bda.ParcialBda.services.AlbumService;
 import com.bda.ParcialBda.services.ItemService;
@@ -10,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.NoSuchElementException;
 
