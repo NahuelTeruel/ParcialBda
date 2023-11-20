@@ -1,7 +1,10 @@
 package com.bda.ParcialBda.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Table(name = "artists")
@@ -19,7 +22,7 @@ public class Artist {
     @Column(name = "Name")
     private String name;
 
-    /*@OneToMany(mappedBy = "artist", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "artist", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Album> albums;*/
+    private List<Album> albums;
 }

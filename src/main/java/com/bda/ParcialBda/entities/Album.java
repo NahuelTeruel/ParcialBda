@@ -1,8 +1,12 @@
 package com.bda.ParcialBda.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import javax.sound.midi.Track;
+import java.util.List;
 
 @Entity
 @Table(name="albums")
