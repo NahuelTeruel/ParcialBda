@@ -18,14 +18,14 @@ public class Item {
             pkColumnName = "name", valueColumnName = "seq",
             pkColumnValue="items",
             initialValue = 1, allocationSize = 1)
-    private Integer idItem;
+    private Integer itemId;
 
     /*
     @OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "invoices")
     @JsonBackReference
     private List<Invoice> invoices;
-    private Integer facturaId;
+    private Integer invoiceId;
     */
     /*
     @OneToMany(mappedBy = "item", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

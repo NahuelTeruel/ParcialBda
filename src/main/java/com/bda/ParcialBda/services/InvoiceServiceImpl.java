@@ -40,7 +40,7 @@ public class InvoiceServiceImpl implements InvoiceService{
         invoice.setBillingCountry(entity.getBillingCountry());
         invoice.setBillingPostalCode(entity.getBillingPostalCode());
         invoice.setTotal(entity.getTotal());
-        return invoiceRepository.save(invoice);;
+        return invoiceRepository.save(invoice);
     }
 
     @Override
@@ -58,6 +58,6 @@ public class InvoiceServiceImpl implements InvoiceService{
             return invoiceRepository.save(invoice.get());}
         else {
             throw new NoSuchElementException("No existente en la Base de Datos");
-        };
+        }
     }
 }

@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 public class CustomerController {
     @Autowired
     private final CustomerService customerService;
-    public CustomerController(ArtistService artistService) {
+    public CustomerController(CustomerService customerService) {
         this.customerService = customerService;
     }
     @GetMapping("/todos")

@@ -20,8 +20,9 @@ public class Invoice {
 
     /*@OneToOne(mappedBy = "invoice", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "CustomerId")
-    @JsonBackReference
-    private Integer customerId;*/
+    @JsonBackReference*/
+    @Column(name = "CustomerId")
+    private Integer customerId;
 
     @Column(name = "InvoiceDate")
     private LocalDateTime invoiceDate;

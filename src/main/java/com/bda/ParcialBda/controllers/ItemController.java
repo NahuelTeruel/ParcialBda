@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 public class ItemController {
     @Autowired
     private final ItemService itemService;
-    public ItemController(AlbumService albumService) { this.itemService = itemService;}
+    public ItemController(ItemService itemService) { this.itemService = itemService;}
 
     @GetMapping
     public ResponseEntity<List<Item>> findAll(){
