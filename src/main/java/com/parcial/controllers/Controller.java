@@ -3,13 +3,11 @@ package com.parcial.controllers;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import com.parcial.entitys.Dtos.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.parcial.entitys.Album;
 import com.parcial.entitys.Artist;
@@ -18,8 +16,6 @@ import com.parcial.entitys.Genre;
 import com.parcial.entitys.Invoice;
 import com.parcial.entitys.Playlist;
 import com.parcial.entitys.Track;
-import com.parcial.entitys.Dtos.AlbumDto;
-import com.parcial.entitys.Dtos.ArtistDto;
 import com.parcial.services.AlbumService;
 import com.parcial.services.ArtistService;
 import com.parcial.services.CustomerService;
@@ -132,12 +128,12 @@ public class Controller {
         }
     }
 
-    
+
     @PostMapping("/album")
-    public ResponseEntity<Album> add(AlbumDto entity) {
+    public ResponseEntity<Album> addAlbum(@RequestBody AlbumDto entity) {
         try{
-        Album album = albumService.add(entity);
-        return ResponseEntity.status(HttpStatus.CREATED).body(album);
+            Album album = albumService.add(entity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(album);
         }
         catch (NoSuchElementException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -145,15 +141,73 @@ public class Controller {
     }
 
     @PostMapping("/artist")
-    public ResponseEntity<Artist> add(ArtistDto entity) {
+    public ResponseEntity<Artist> addArtist(@RequestBody ArtistDto entity) {
         try{
-        Artist artist = artistService.add(entity);
-        return ResponseEntity.status(HttpStatus.CREATED).body(artist);
+            Artist artist = artistService.add(entity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(artist);
         }
         catch (NoSuchElementException ex) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
+
+
+    @PostMapping("/customer")
+    public ResponseEntity<Customer> addCustomer(@RequestBody CustomerDto entity) {
+        try{
+            Customer customer = customerService.add(entity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PostMapping("/genre")
+    public ResponseEntity<Genre> addGenre(@RequestBody GenreDto entity) {
+        try{
+            Genre genre = genreService.add(entity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(genre);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PostMapping("/invoice")
+    public ResponseEntity<Invoice> addInvoice(@RequestBody InvoiceDto entity) {
+        try{
+            Invoice invoice = invoiceService.add(entity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(invoice);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PostMapping("/playlist")
+    public ResponseEntity<Playlist> addPlaylist(@RequestBody PlaylistDto entity) {
+        try{
+            Playlist playlist = playlistService.add(entity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(playlist);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PostMapping("/track")
+    public ResponseEntity<Track> addTrack(@RequestBody TrackDto entity) {
+        try{
+            Track track = trackService.add(entity);
+            return ResponseEntity.status(HttpStatus.CREATED).body(track);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+
 
 }
 
