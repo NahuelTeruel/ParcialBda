@@ -207,7 +207,236 @@ public class Controller {
         }
     }
 
+    @PutMapping("/album/{id}")
+    public ResponseEntity<Album> updateAlbum(@PathVariable("id")Integer id, @RequestBody AlbumDto entity){
+        try {
+            Album album = albumService.update(id, entity);
+            return ResponseEntity.ok(album);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 
+    @PutMapping("/artist/{id}")
+    public ResponseEntity<Artist> updateArtist(@PathVariable("id")Integer id, @RequestBody ArtistDto entity){
+        try {
+            Artist artist = artistService.update(id, entity);
+            return ResponseEntity.ok(artist);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PutMapping("/customer/{id}")
+    public ResponseEntity<Customer> updateCustomer(@PathVariable("id")Integer id, @RequestBody CustomerDto entity){
+        try {
+            Customer customer = customerService.update(id, entity);
+            return ResponseEntity.ok(customer);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PutMapping("/genre/{id}")
+    public ResponseEntity<Genre> updateGenre(@PathVariable("id")Integer id, @RequestBody GenreDto entity){
+        try {
+            Genre genre = genreService.update(id, entity);
+            return ResponseEntity.ok(genre);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PutMapping("/invoice/{id}")
+    public ResponseEntity<Invoice> updateInvoice(@PathVariable("id")Integer id, @RequestBody InvoiceDto entity){
+        try {
+            Invoice invoice = invoiceService.update(id, entity);
+            return ResponseEntity.ok(invoice);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PutMapping("/playlist/{id}")
+    public ResponseEntity<Playlist> updatePlaylist(@PathVariable("id")Integer id, @RequestBody PlaylistDto entity){
+        try {
+            Playlist playlist = playlistService.update(id, entity);
+            return ResponseEntity.ok(playlist);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @PutMapping("/track/{id}")
+    public ResponseEntity<Track> updateTrack(@PathVariable("id")Integer id, @RequestBody TrackDto entity){
+        try {
+            Track track = trackService.update(id, entity);
+            return ResponseEntity.ok(track);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @DeleteMapping("/album/{id}")
+    public ResponseEntity<Album> deleteAlbum(@PathVariable("id")Integer id){
+        try{
+            Album album = albumService.delete(id);
+            return ResponseEntity.ok(album);
+        }
+        catch (NoSuchElementException ex){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @DeleteMapping("/artist/{id}")
+    public ResponseEntity<Artist> deleteArtist(@PathVariable("id")Integer id){
+        try{
+            Artist artist = artistService.delete(id);
+            return ResponseEntity.ok(artist);
+        }
+        catch (NoSuchElementException ex){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @DeleteMapping("/customer/{id}")
+    public ResponseEntity<Customer> deleteCustomer(@PathVariable("id")Integer id){
+        try{
+            Customer customer = customerService.delete(id);
+            return ResponseEntity.ok(customer);
+        }
+        catch (NoSuchElementException ex){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @DeleteMapping("/genre/{id}")
+    public ResponseEntity<Genre> deleteGenre(@PathVariable("id")Integer id){
+        try{
+            Genre genre = genreService.delete(id);
+            return ResponseEntity.ok(genre);
+        }
+        catch (NoSuchElementException ex){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @DeleteMapping("/invoice/{id}")
+    public ResponseEntity<Invoice> deleteInvoice(@PathVariable("id")Integer id){
+        try{
+            Invoice invoice = invoiceService.delete(id);
+            return ResponseEntity.ok(invoice);
+        }
+        catch (NoSuchElementException ex){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @DeleteMapping("/playlist/{id}")
+    public ResponseEntity<Playlist> deletePlaylist(@PathVariable("id")Integer id){
+        try{
+            Playlist playlist = playlistService.delete(id);
+            return ResponseEntity.ok(playlist);
+        }
+        catch (NoSuchElementException ex){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @DeleteMapping("/track/{id}")
+    public ResponseEntity<Track> deleteTrack(@PathVariable("id")Integer id){
+        try{
+            Track track = trackService.delete(id);
+            return ResponseEntity.ok(track);
+        }
+        catch (NoSuchElementException ex){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping("/album/{id}")
+    public ResponseEntity<Album> getAlbumById(@PathVariable("id") Integer id){
+        try {
+            Album album = albumService.findById(id);
+            return ResponseEntity.ok(album);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping("/artist/{id}")
+    public ResponseEntity<Artist> getArtistById(@PathVariable("id") Integer id){
+        try {
+            Artist artist = artistService.findById(id);
+            return ResponseEntity.ok(artist);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping("/customer/{id}")
+    public ResponseEntity<Customer> getCustomerById(@PathVariable("id") Integer id){
+        try {
+            Customer customer = customerService.findById(id);
+            return ResponseEntity.ok(customer);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping("/genre/{id}")
+    public ResponseEntity<Genre> getGenreById(@PathVariable("id") Integer id){
+        try {
+            Genre genre = genreService.findById(id);
+            return ResponseEntity.ok(genre);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping("/invoice/{id}")
+    public ResponseEntity<Invoice> getInvoiceById(@PathVariable("id") Integer id){
+        try {
+            Invoice invoice = invoiceService.findById(id);
+            return ResponseEntity.ok(invoice);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping("/playlist/{id}")
+    public ResponseEntity<Playlist> getPlaylistById(@PathVariable("id") Integer id){
+        try {
+            Playlist playlist = playlistService.findById(id);
+            return ResponseEntity.ok(playlist);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping("/track/{id}")
+    public ResponseEntity<Track> getTrackById(@PathVariable("id") Integer id){
+        try {
+            Track track = trackService.findById(id);
+            return ResponseEntity.ok(track);
+        }
+        catch (NoSuchElementException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
 
 }
 
