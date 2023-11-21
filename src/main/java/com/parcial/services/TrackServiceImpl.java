@@ -79,8 +79,6 @@ public class TrackServiceImpl implements TrackService{
     public Track add(TrackDto entity) {
         Track track = new Track();
         Optional<Album> album = Optional.of(albumService.findById(entity.getAlbumId()));
-        
-        
         Optional<Genre> genre = Optional.of(genreService.findById(entity.getGenreId()));
 
         if(album.isPresent() && genre.isPresent())

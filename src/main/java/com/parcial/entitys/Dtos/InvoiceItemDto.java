@@ -1,5 +1,6 @@
 package com.parcial.entitys.Dtos;
 
+import com.parcial.entitys.Invoice;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemDto {
+public class InvoiceItemDto {
 
     private Integer invoiceId;
 

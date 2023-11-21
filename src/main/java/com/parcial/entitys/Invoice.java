@@ -6,16 +6,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import jakarta.persistence.TableGenerator;
+import jakarta.persistence.*;
 import lombok.Data;
 
 
@@ -57,9 +48,7 @@ public class Invoice {
     @Column(name = "Total")
     private Float Total;
 
-     @ManyToMany
-    @JoinTable(name= "invoice_items",joinColumns = @JoinColumn(name = "InvoiceId"),
-            inverseJoinColumns = @JoinColumn(name = "TrackId"))
+    @OneToMany(mappedBy = "invoiceId")
     @JsonIgnore
-    private List<Track> tracks =new ArrayList<>();
+    private List<InvoiceItem> invoiceItems = new ArrayList<>();
 }
