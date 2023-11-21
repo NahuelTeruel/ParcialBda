@@ -1,5 +1,8 @@
 package com.bda.ParcialBda.services;
 
+import com.bda.ParcialBda.entities.Playlist;
+import com.bda.ParcialBda.entities.dto.PlaylistDto;
+import com.bda.ParcialBda.repositories.PlaylistRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +13,7 @@ import java.util.Optional;
 public class PlaylistServiceImpl implements PlaylistService{
 
     private final PlaylistRepository playlistRepository;
-    public PlaylistServiceImpl(PlaylistRepository artistRepository){this.playlistRepository = playlistRepository;}
+    public PlaylistServiceImpl(PlaylistRepository playlistRepository){this.playlistRepository = playlistRepository;}
     @Override
     public List<Playlist> findAll()  {
         return playlistRepository.findAll();

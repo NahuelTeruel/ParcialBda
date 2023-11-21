@@ -1,5 +1,8 @@
 package com.bda.ParcialBda.services;
 
+import com.bda.ParcialBda.entities.Playlist;
+import com.bda.ParcialBda.entities.dto.PlaylistDto;
+
 import java.util.List;
 
 public interface PlaylistService {
