@@ -1,6 +1,7 @@
 package com.bda.ParcialBda.controllers;
 
 import com.bda.ParcialBda.entities.Playlist;
+import com.bda.ParcialBda.entities.dto.PlaylistDto;
 import com.bda.ParcialBda.services.PlaylistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
