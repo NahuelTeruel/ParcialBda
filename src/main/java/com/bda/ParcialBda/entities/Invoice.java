@@ -36,7 +36,7 @@ public class Invoice {
     @Column(name = "BillingState")
     private String billingState;
 
-    @Column(name = "BillingCounty")
+    @Column(name = "BillingCountry")
     private String billingCountry;
 
     @Column(name = "BillingPostalCode")

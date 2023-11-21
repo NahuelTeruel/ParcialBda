@@ -18,5 +18,5 @@ public class CustomerDto {
     private String phone;
     private String fax;
     private String email;
-    private Integer supportRepld;
+    private Integer supportRepId;
 }

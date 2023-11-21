@@ -38,7 +38,7 @@ public class customerServiceImpl implements CustomerService{
         customer.setPhone(entity.getPhone());
         customer.setFax(entity.getFax());
         customer.setEmail(entity.getEmail());
-        customer.setSupportRepld(entity.getSupportRepld());
+        customer.setSupportRepId(entity.getSupportRepId());
         return customerRepository.save(customer);
     }
 
@@ -64,7 +64,7 @@ public class customerServiceImpl implements CustomerService{
             customer.get().setPhone(entity.getPhone());
             customer.get().setFax(entity.getFax());
             customer.get().setEmail(entity.getEmail());
-            customer.get().setSupportRepld(entity.getSupportRepld());
+            customer.get().setSupportRepId(entity.getSupportRepId());
             return customerRepository.save(customer.get());}
         else {
             throw new NoSuchElementException("No existente en la Base de Datos");

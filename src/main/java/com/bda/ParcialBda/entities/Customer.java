@@ -9,7 +9,11 @@ import lombok.Data;
 public class Customer {
     @Id
     @Column(name = "CustomerId")
-    @GeneratedValue()
+    @GeneratedValue(generator = "Customers")
+    @TableGenerator(name = "Customers", table = "sqlite_sequence",
+            pkColumnName = "name", valueColumnName = "seq",
+            pkColumnValue="customer",
+            initialValue = 1, allocationSize = 1)
     private Integer customerId;
     @Column(name = "FirstName")
     private String firstName;
@@ -33,6 +37,6 @@ public class Customer {
     private String fax;
     @Column(name = "Email")
     private String email;
-    @Column(name = "SupportRepld")
-    private Integer supportRepld;
+    @Column(name = "SupportRepId")
+    private Integer supportRepId;
 }
