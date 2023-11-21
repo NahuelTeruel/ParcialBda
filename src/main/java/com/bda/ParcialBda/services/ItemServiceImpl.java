@@ -1,17 +1,20 @@
 package com.bda.ParcialBda.services;
 
+import com.bda.ParcialBda.entities.Item;
+import com.bda.ParcialBda.entities.dto.ItemDto;
+import com.bda.ParcialBda.repositories.ItemRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
 public class ItemServiceImpl implements ItemService{
     private final ItemRepository itemRepository;
-    private final ItemService itemService;
 
-    public ItemServiceImpl(ItemRepository itemRepository, ItemService itemService) {
+    public ItemServiceImpl(ItemRepository itemRepository) {
         this.itemRepository = itemRepository;
-        this.itemService = itemService;
     }
 
     @Override
