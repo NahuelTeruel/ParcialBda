@@ -1,9 +1,7 @@
 package com.parcial.controllers;
 
-import com.parcial.entitys.Album;
-import com.parcial.entitys.Dtos.AlbumDto;
-import com.parcial.entitys.Dtos.InvoiceItemDto;
 import com.parcial.entitys.InvoiceItem;
+import com.parcial.entitys.Dtos.InvoiceItemDto;
 import com.parcial.services.InvoiceItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
