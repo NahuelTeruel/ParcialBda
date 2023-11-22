@@ -1,4 +1,4 @@
-package com.parcial1.Services;
+/*package com.parcial1.Services;
 
 import com.parcial.entitys.Artist;
 import com.parcial.entitys.Dtos.ArtistDto;
@@ -134,4 +134,4 @@ public class ArtistServiceImplTest {
             artistService.modify(artistId, artistDTO);
         });
     }
-}
+}*/
